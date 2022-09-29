@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import TicketControl from "./TicketControl";
+import MystyledComponent from "./MyStyledComponent";
 
 
 function App(){
@@ -8,6 +9,7 @@ function App(){
     <React.Fragment>
       <Header/>
       <TicketControl/>
+      {/* <MystyledComponent/> */}
     </React.Fragment>
 
   );
@@ -17,19 +19,15 @@ export default App;
 
 
 
-// 
-//This was original code before introducing jsx
-//import logo from './logo.svg';
+
+// This was original code before introducing jsx
+// import logo from './logo.svg';
 // import './App.css';
 
 // function App() {
 //   return (
 //     <div className="App">
 //       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
 //         <a
 //           className="App-link"
 //           href="https://reactjs.org"

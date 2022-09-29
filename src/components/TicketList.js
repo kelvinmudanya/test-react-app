@@ -1,45 +1,27 @@
 import React from "react";
 import Ticket from "./Ticket";
+import PropTypes from "prop-types";
 
-
-
-const mainTicketList  = [
-    {
-        names : 'Caroline',
-        location : 'Kakamega',
-        issue : 'The whole code is not working'
-    },
-    {
-        names : 'Carlos',
-        location : 'Kakamega',
-        issue : 'Trying to identify the problem'
-    },
-    {
-        names : 'Clinton',
-        location : 'Kakamega',
-        issue : 'I have found the solution, but it is not working'
-    },
-    {
-        names : 'Jaslan',
-        location : 'Bungoma',
-        issue : 'Just leave it'
-    },
-];
-function TicketList(){
+function TicketList(props){
     return(
         <React.Fragment>
             <hr/>
-            {mainTicketList.map((ticket, index)=>
-            <Ticket names= {ticket.names}
+            {props.ticketList.map((ticket)=>
+            
+            <Ticket 
+            whenTicketClicked = {props.onTicketSelection}
+            names = {ticket.names}
             location = {ticket.location}
             issue = {ticket.issue}
-            key={index}/>
+            id = {ticket.Id}
+            key={ticket.Id}/>
             )}
-
-       
-
         </React.Fragment>
-
     );
 }
+//Add prop types of the ticketList
+TicketList.propTypes = {
+    ticketList: PropTypes.array,
+    onTicketSelection: PropTypes.func
+};
 export default TicketList;
